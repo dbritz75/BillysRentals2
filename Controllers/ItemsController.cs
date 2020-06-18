@@ -1,5 +1,4 @@
-﻿using BillysRentals2.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -7,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using BillysRentals2.Models;
 
 namespace BillysRentals2.Controllers
 {
@@ -40,7 +40,7 @@ namespace BillysRentals2.Controllers
         public ActionResult Create()
         {
             ViewBag.Category = new SelectList(db.Categories, "CategoryID", "CategoryName");
-            ViewBag.Manufacturer = new SelectList(db.Manufacturers, "ID","ManufacturerName");
+            ViewBag.Manufacturer = new SelectList(db.Manufacturers, "ID", "ManufacturerName");
             return View();
         }
 
@@ -59,6 +59,7 @@ namespace BillysRentals2.Controllers
             }
 
             ViewBag.Category = new SelectList(db.Categories, "CategoryID", "CategoryName", item.Category);
+            ViewBag.Manufacturer = new SelectList(db.Manufacturers, "ID", "ManufacturerName", item.Manufacturer);
             return View(item);
         }
 
@@ -75,6 +76,7 @@ namespace BillysRentals2.Controllers
                 return HttpNotFound();
             }
             ViewBag.Category = new SelectList(db.Categories, "CategoryID", "CategoryName", item.Category);
+            ViewBag.Manufacturer = new SelectList(db.Manufacturers, "ID", "ManufacturerName", item.Manufacturer);
             return View(item);
         }
 
@@ -92,6 +94,7 @@ namespace BillysRentals2.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.Category = new SelectList(db.Categories, "CategoryID", "CategoryName", item.Category);
+            ViewBag.Manufacturer = new SelectList(db.Manufacturers, "ID", "ManufacturerName", item.Manufacturer);
             return View(item);
         }
 

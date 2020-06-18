@@ -10,11 +10,13 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table-striped table-condensed">
+<table class="table">
     <tr>
-        <th>@Html.DisplayNameFor(model => model.ItemID)
+        <th>
+            @Html.DisplayNameFor(model => model.MasterItemID)
         </th>
-        <th>@Html.DisplayNameFor(model => model.ItemName)
+        <th>
+            @Html.DisplayNameFor(model => model.ItemName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ItemDescription)
@@ -41,6 +43,15 @@
             @Html.DisplayNameFor(model => model.DateInService)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.DateDisposed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateModified)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemPicturePath)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Category1.CategoryName)
         </th>
         <th></th>
@@ -48,17 +59,48 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>@Html.DisplayFor(modelItem => item.MasterItemID)</td>
-        <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
-        <td>@Html.DisplayFor(modelItem => item.ItemDescription)</td>
-        <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
-        <td>@Html.DisplayFor(modelItem => item.PriceEach)</td>
-        <td>@Html.DisplayFor(modelItem => item.MaintenanceIntervalDays)</td>
-        <td>@Html.DisplayFor(modelItem => item.Model)</td>
-        <td>@Html.DisplayFor(modelItem => item.Manufacturer)</td>
-        <td>@Html.DisplayFor(modelItem => item.DateAcquired)</td>
-        <td>@Html.DisplayFor(modelItem => item.DateInService)</td>
-        <td>@Html.DisplayFor(modelItem => item.Category1.CategoryName)</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MasterItemID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceEach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaintenanceIntervalDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Manufacturer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateAcquired)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateInService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateDisposed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateModified)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemPicturePath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category1.CategoryName)
+        </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ItemID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ItemID }) |
